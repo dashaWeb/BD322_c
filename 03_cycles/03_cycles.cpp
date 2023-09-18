@@ -192,4 +192,7 @@ cout << endl;
 		}
 		cout << endl;
 	}
+	//fksdjfksdjfkkk
+	int a=555, b, c;
+
 }
