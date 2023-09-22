@@ -40,5 +40,12 @@ int main()
 	cout << "Max Digit :: " << maxDigit(1296) << endl;
 	showSymbol(5);
 	cout << endl;
+
+	/*
+		2^4 --> 2 * 2^3
+		2^3 --> 2 * 2^2
+		2^2 --- 2 * 2^1
+		2^1 --> 2
+	*/
 }
 
