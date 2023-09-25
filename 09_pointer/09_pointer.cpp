@@ -7,7 +7,50 @@ void Swap(int* first, int* last) {
 	*first = *last;
 	*last = tmp;
 }
+void task5() {
+	srand(time(0));
 
+
+
+	const int arraySize = 5;
+	int numbers[arraySize];
+
+
+
+	for (size_t i = 0; i < arraySize; i++) {
+		numbers[i] = rand() % 10;
+	}
+
+
+
+	cout << "Array :: " << endl;
+
+
+
+	for (size_t i = 0; i < arraySize; i++) {
+		cout << numbers[i] << "\t";
+	}
+	cout << endl;
+
+
+
+	int* ptr = numbers;
+	int sum = 0;
+
+
+
+	for (int i = 0; i < arraySize; i++) {
+		sum += *ptr;
+		ptr++;
+	}
+
+
+
+	cout << "Sum of the elements: " << sum << endl;
+
+
+
+}
 int main()
 {
 	//int a = 5, b = 7;
@@ -20,7 +63,7 @@ int main()
 	//cout << "A :: " << a << "\t B :: " << b << endl;
 	//Swap(ptr_a, &b);
 	//cout << "A :: " << a << "\t B :: " << b << endl;
-	const int size = 10;
+	/*const int size = 10;
 	int arr[size]{ 1,5,8,9,6,8,4,3,0,7 };
 	int* ptr = arr;
 	for (size_t i = 0; i < size; i++)
@@ -45,5 +88,6 @@ int main()
 	{
 		cout << *(arr + i) << "\t";
 	}
-	cout << endl;
+	cout << endl;*/
+	task5();
 }
