@@ -20,8 +20,8 @@ void print(int arr[], size_t length, string text = "") {
 int* createArray(size_t size) {
 	return new int[size];
 }
-
-void pushBack(int* &arr, size_t& size, int value) {
+//Доповнення масиву одним елементом в цінець.
+void pushBack(int*& arr, size_t& size, int value) {
 	int* tmp = new int[size + 1];
 	for (size_t i = 0; i < size; i++)
 	{
@@ -32,6 +32,47 @@ void pushBack(int* &arr, size_t& size, int value) {
 	delete[]arr;
 	arr = tmp;
 }
+//Вставка нового елемента за вказаним індексом
+void insert(int*& arr, size_t& size, int value, int index) {
+	if (index < 0 || index > size) {
+		cout << "Error index" << endl;
+		return;
+	}
+	int* tmp = new int[size + 1];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (i < index)
+			tmp[i] = arr[i];
+		else
+			tmp[i + 1] = arr[i];
+	}
+	tmp[index] = value;
+	size++;
+	delete[]arr;
+	arr = tmp;
+}
+//Видалення елемента за позицією(індексом)
+void insert(int*& arr, size_t& size, int index) {
+	if (index < 0 || index > size) {
+		cout << "Error index" << endl;
+		return;
+	}
+	if (size == 1) {
+		delete[]arr;
+		arr = nullptr;
+	}
+	int* tmp = new int[--size];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (i < index)
+			tmp[i] = arr[i];
+		else
+			tmp[i] = arr[i + 1];
+	}
+	delete[]arr;
+	arr = tmp;
+}
+
 //Написати функції для роботи з динамічним цілочисельним одновимірним масивом :
 //Функція створення динамічного масиву вказаного розміру та занулення його елементів
 //Заповнення масиву випадковими числами з вказаного користувачем діапазону.
