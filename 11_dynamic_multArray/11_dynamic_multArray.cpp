@@ -69,6 +69,31 @@ void insert(int**& arr, int& row, const int& col, const int index) {
 	delete[] arr;
 	arr = tmp;
 }
+void pushFront(int**& arr, int& row, const int& col) {
+	insert(arr, row, col, 0);
+}
+void pushBack(int**& arr, int& row, const int& col) {
+	insert(arr, row, col, row);
+}
+void remove(int**& arr, int& row, const int index) {
+	if (index < 0 || index >= row) {
+		cout << "Error" << endl;
+		return;
+	}
+	int** tmp = new int* [--row];
+	delete[] arr[index];
+	for (size_t i = 0; i < row; i++)
+	{
+		if (i < index) {
+			tmp[i] = arr[i];
+		}
+		else {
+			tmp[i] = arr[i + 1];
+		}
+	}
+	delete[] arr;
+	arr = tmp;
+}
 int main()
 {
 	int row = 4, col = 5;
