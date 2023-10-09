@@ -52,7 +52,7 @@ void insert(int*& arr, size_t& size, int value, int index) {
 	arr = tmp;
 }
 //Видалення елемента за позицією(індексом)
-void insert(int*& arr, size_t& size, int index) {
+void remove(int*& arr, size_t& size, int index) {
 	if (index < 0 || index > size) {
 		cout << "Error index" << endl;
 		return;
